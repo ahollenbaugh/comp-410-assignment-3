@@ -13,6 +13,13 @@
 
 % ---REPLACE ME WITH CODE---
 
+sumAll(H, H, H).
+sumAll(L, H, X) :-
+    L < H,
+    L2 is L + 1,
+    sumAll(L2, H, X2),
+    X is X2 + L.
+
 % With your summation procedure in hand, the following queries
 % should all succeed (do NOT simply hardcode these values!):
 
