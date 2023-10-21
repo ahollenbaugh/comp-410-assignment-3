@@ -11,8 +11,6 @@
 % inclusive).  If the low end is greater than the high end,
 % then failure should occur.
 
-% ---REPLACE ME WITH CODE---
-
 sumAll(H, H, H).
 sumAll(L, H, X) :-
     L < H,
@@ -58,4 +56,12 @@ directPrereq(comp256, phil230).
 %     is a prerequisite (but not necessarily a direct prerequisite)
 %     to course B.  This serves as a recursive case.
 
-% ---REPLACE ME WITH CODE---
+prereq(COURSE, PREREQ) :- % base case
+    % write("COURSE = "), write(COURSE), nl,
+    % write("PREREQ = "), write(PREREQ), nl,
+    directPrereq(COURSE, PREREQ).
+prereq(COURSE, PREREQ) :- % recursive case
+    % write("COURSE = "), write(COURSE), nl,
+    % write("PREREQ = "), write(PREREQ), nl,
+    directPrereq(COURSE, DIRPRE),
+    prereq(DIRPRE, PREREQ).
